@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Graduate" rel="stylesheet">
+    <link rel="stylesheet" href="/client/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+</head>
+
+<body>
+    <div id="search-container">
+        <input class="input" id="teamNameInput" type="text" placeholder="Team Name">
+        <input class="input" id="yearInput" type="text" placeholder="Year">
+        <button class="generatePlayers" onclick=fetch()>Get Team</button>
+    </div>
+    <button class="retrieve">retrieve</button>
+    <button class="filterActive">Filter Active</button>
+    <div id="playersBoard"></div>
+
+    <script id="roster-template" type="text/x-handlebars-template">
+        {{#each players}}
+        <div class="player">
+            <p class="name">{{firstName}} {{lastName}}</p>
+            <p class="number">{{jersey}}</p>
+            <div class="player-image">
+                <img class="playerimg"
+                    src="{{img}}"
+                >
+            </div>
+            <p class="pos">{{pos}}</p>
+            <button class="addDream">+</button>
+            <button class="stats">stats</button>
+            <div class="dropup">
+                <div class="dropup-content">
+             </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="rosterdream-template" type="text/x-handlebars-template">
+        {{#each dreamPlayers}}
+        <div class="player">
+            <p class="name">{{firstName}} {{lastName}}</p>
+            <p class="number">{{jersey}}</p>
+            <div class="player-image">
+                <img class="playerimg"
+                    src="{{img}}"
+                >
+            </div>
+            <p class="pos">{{pos}}</p>
+            <button class="removeDream">-</button>
+            <button class="stats">stats</button>
+            <div class="dropup">
+                <div class="dropup-content">
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script class="stats-template" type="text/x-handlebars-template">
+        <p class="stat">Games Played: {{games_played}}</p>
+        <p class="stat">Minutes Per Game: {{minutes_per_game}}</p>
+        <p class="stat">Steals Per Game: {{steals_per_game}}</p>
+        <p class="stat">Blocks Per Game: {{blocks_per_game}}</p>
+        <p class="stat">Player efficiency: {{player_efficiency_rating}}</p>
+    </script>
+    
+
+    <script src="/client/module.js"></script>
+    <script src="/client/renderer.js"></script>
+    <script src="/client/main.js"></script>
+</body>
+
+</html>

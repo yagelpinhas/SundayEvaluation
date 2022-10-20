@@ -1,0 +1,96 @@
+#search-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+*{
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+body{
+    background-color: #bdc2c7;
+}
+
+.input{
+    padding: 1vw;
+    display: inline;
+}
+.generatePlayers{
+    display: inline
+}
+#playersBoard{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1vw;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.player{
+    background-color: #FF6700;
+    text-align: center;
+    align-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.player-image{
+    background-color: #bdc3c7;
+    box-shadow: 1px 1px 3px black;
+    box-sizing: border-box;
+}
+
+img {
+    width: 350px;
+    height: 300px;
+}
+
+.retrieve{
+    background-color: pink;
+}
+
+.filterActive{
+    background-color: lightseagreen;
+}
+
+.stats{
+    background-color: yellow;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+
+}
+  
+#dropup-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    bottom: 40px;
+    z-index: 1;
+}
+  
+#dropup-content p {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+  
+#dropup-content p:hover {background-color: #ccc}
+  
+.dropup:hover #dropup-content {
+    display: block;
+}
+
+.stat{
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color:bisque
+}
