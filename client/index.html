@@ -20,8 +20,8 @@
         <button class="search" onclick=fetch()>Search</button>
     </div>
     <div id="recipesBoard"></div>
-    <script id="roster-template" type="text/x-handlebars-template">
-        {{#each players}}
+    <script id="recipes-template" type="text/x-handlebars-template">
+        {{#each recipes}}
         <div class="player">
             <p class="name">{{firstName}} {{lastName}}</p>
             <p class="number">{{jersey}}</p>

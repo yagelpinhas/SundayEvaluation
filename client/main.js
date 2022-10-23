@@ -3,7 +3,7 @@ const renderer = Renderer()
 const module = RecipeManager()
 
 const fetch = async function () {
-    const ingredient = $(`#recipeInput`).val()
+    let ingredient = $(`#recipeInput`).val()
     let gluten_free="false";
     let dairy_free="false";
     if(document.getElementById('glutenCheckBox').checked) {
@@ -12,5 +12,7 @@ const fetch = async function () {
     if(document.getElementById('dairyCheckBox').checked) {
       dairy_free="true";
     }
+    recipes = await module.getRecipes(ingredient,gluten_free,dairy_free)
+    renderer.render(recipes)
 }
 

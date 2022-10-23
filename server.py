@@ -40,6 +40,12 @@ def filter_recipe(recipe,table_name):
             return False
     return True
 
+def filter_attributes(recipes):
+    filtered_recipes_by_attributes=[]
+    for recipe in recipes:
+        filtered_recipes_by_attributes.append({"ingredients":recipe["ingredients"],"title":recipe["title"],"thumbnail": recipe["thumbnail"],"href":recipe["href"]})
+    return filtered_recipes_by_attributes
+
 @app.get('/recipes/')
 def get_recipes(ingredient,gluten_free,dairy_free):
     res = requests.get(f"https://recipes-goodness.herokuapp.com/recipes/{ingredient}")
@@ -48,6 +54,7 @@ def get_recipes(ingredient,gluten_free,dairy_free):
         recipes = list(filter(lambda recipe: (filter_recipe(recipe,"gluten")), recipes))
     if dairy_free=="true":
         recipes = list(filter(lambda recipe: (filter_recipe(recipe,"dairy")), recipes))
+    recipes = filter_attributes(recipes)
     return recipes
 
 @app.get('/')
@@ -55,4 +62,4 @@ def root():
     return FileResponse('./client/index.html')
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8023,reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8027,reload=True)
