@@ -10,17 +10,22 @@ const RecipeManager = function () {
         ingredients=[]
         for (recipe of recipes){
             if(recipe["title"]==title){
-                relevant_recipt =recipe["ingredients"]
+                relevant_recipe =recipe["ingredients"]
             }
         }
-        for (recipe of relevant_recipt){
-            ingredients.push({"ingredient" : recipe})
+        for (ingredient of relevant_recipe){
+            ingredients.push({"ingredient" : ingredient})
         }
         return ingredients
     }
 
+    const getFirstIngredient = function(title){
+        return getRecipeIngredients(title)[0]["ingredient"]
+    }
+
     return {
         getRecipes: getRecipes,
-        getRecipeIngredients: getRecipeIngredients
+        getRecipeIngredients: getRecipeIngredients,
+        getFirstIngredient: getFirstIngredient
     }
 }
