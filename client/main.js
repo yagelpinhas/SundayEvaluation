@@ -16,3 +16,10 @@ const fetch = async function () {
     renderer.render(recipes)
 }
 
+$("body").on("click",".ingredients", async function(){
+  let recipe = $(this).closest(".recipe")
+  let title = recipe.find(".title").html()
+  ingredients = module.getRecipeIngredients(title)
+  renderer.renderIngredients(ingredients,recipe)
+})
+

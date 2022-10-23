@@ -22,24 +22,30 @@
     <div id="recipesBoard"></div>
     <script id="recipes-template" type="text/x-handlebars-template">
         {{#each recipes}}
-        <div class="player">
-            <p class="name">{{firstName}} {{lastName}}</p>
-            <p class="number">{{jersey}}</p>
-            <div class="player-image">
-                <img class="playerimg"
-                    src="{{img}}"
+        <div class="recipe">
+            <p class="title">{{title}}</p>
+            <div class="recipe-image">
+                <img class="img"
+                    src="{{thumbnail}}"
                 >
             </div>
-            <p class="pos">{{pos}}</p>
-            <button class="addDream">+</button>
-            <button class="stats">stats</button>
+            <a>{{href}}</a>
+        <button class="ingredients">ingredients</button>
             <div class="dropup">
                 <div class="dropup-content">
-             </div>
+                </div>
             </div>
         </div>
         {{/each}}
     </script>
+
+    <script class="ingredients-template" type="text/x-handlebars-template">
+        {{#each ingredients}}
+        <p>{{ingredient}}</p>
+        {{/each}}
+    </script>
+
+
     <script src="/client/module.js"></script>
     <script src="/client/renderer.js"></script>
     <script src="/client/main.js"></script>

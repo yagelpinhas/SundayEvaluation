@@ -29,7 +29,7 @@ p{
     margin: 0;
     padding: 0;
 }
-.player{
+.recipe{
     background-color: #FF6700;
     text-align: center;
     align-content: center;
@@ -38,7 +38,7 @@ p{
     padding-right: 1vw;
 }
 
-.player-image{
+.recipe-image{
     background-color: #bdc3c7;
     box-shadow: 1px 1px 3px black;
     box-sizing: border-box;
@@ -47,18 +47,6 @@ p{
 img {
     width: 350px;
     height: 300px;
-}
-
-.retrieve{
-    background-color: pink;
-}
-
-.filterActive{
-    background-color: lightseagreen;
-}
-
-.stats{
-    background-color: yellow;
 }
 
 .dropup {

@@ -6,7 +6,14 @@ const Renderer = function() {
         const newHTML = template({recipes})
         $(`#recipesBoard`).empty().append(newHTML)
     }
+    const renderIngredients = function(ingredients,recipe){
+        const sourceIngredients = $(`.ingredients-template`).html()
+        const templateIngredients = Handlebars.compile(sourceIngredients)
+        const newHTML = templateIngredients({ingredients})
+        recipe.find(".dropup-content").append(newHTML)
+    }
     return {
-        render: render
+        render: render,
+        renderIngredients: renderIngredients
     }
 }

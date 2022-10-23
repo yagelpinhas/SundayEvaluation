@@ -62,4 +62,4 @@ def root():
     return FileResponse('./client/index.html')
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8027,reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8040,reload=True)
