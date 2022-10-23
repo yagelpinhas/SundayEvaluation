@@ -83,7 +83,7 @@ img {
 }
 
 .ingredients{
-    background-color: rgb(15, 173, 120);
+    background-color: rgb(15, 173, 118);
 }
 
 .search{
@@ -92,4 +92,8 @@ img {
 
 .filters{
     color: white;
+}
+
+.title{
+    color:slateblue;
 }
