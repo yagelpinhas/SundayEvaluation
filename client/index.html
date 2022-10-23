@@ -14,8 +14,14 @@
 
 <body>
     <div id="search-container">
-        <input class="checkbox" id="glutenCheckBox" type="checkbox">gluten free</input>
-        <input class="checkbox" id="dairyCheckBox" type="checkbox">dairy free</input>
+        <label class="checkbox" for="glutenCheckBox">
+            <input type="checkbox" id="glutenCheckBox" type="checkbox"></input>
+            <span class="filters">gluten free</span>
+        </label>
+        <label class="checkbox" for=""dairyCheckBox>
+            <input type="checkbox" id="dairyCheckBox" type="checkbox"></input>
+            <span class="filters">dairy free</span>
+        </label>        
         <input class="input" id="recipeInput" type="text" placeholder="Search for a recipe"> </input>
         <button class="search" onclick=fetch()>Search</button>
     </div>
@@ -29,7 +35,7 @@
                     src="{{thumbnail}}"
                 >
             </div>
-            <a>{{href}}</a>
+            <a href="{{href}}">YouTube Tutorial</a>
         <button class="ingredients">ingredients</button>
             <div class="dropup">
                 <div class="dropup-content">
@@ -41,7 +47,7 @@
 
     <script class="ingredients-template" type="text/x-handlebars-template">
         {{#each ingredients}}
-        <p>{{ingredient}}</p>
+        <p class="smaller">{{ingredient}}</p>
         {{/each}}
     </script>
 
