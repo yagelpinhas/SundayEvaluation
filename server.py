@@ -35,10 +35,11 @@ def get_recipes(ingredient,gluten_free,dairy_free, response: Response):
         recipes = list(filter(lambda recipe: (helper.filter_recipe(recipe,"dairy")), recipes))
     recipes = helper.filter_attributes(recipes)
     return recipes
+    a=5
 
 @app.get('/')
 def root():
     return FileResponse('./client/index.html')
 
 if __name__ == "__main__":
-    uvicorn.run("server:app", host="0.0.0.0", port=8071,reload=True)
+    uvicorn.run("server:app", host="0.0.0.0", port=8076,reload=True)

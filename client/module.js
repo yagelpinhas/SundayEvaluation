@@ -8,7 +8,9 @@ const RecipeManager = function () {
 
     const getRecipeIngredients = function(title){
         ingredients=[]
+        let relevant_recipe;
         for (recipe of recipes){
+
             if(recipe["title"]==title){
                 relevant_recipe =recipe["ingredients"]
             }

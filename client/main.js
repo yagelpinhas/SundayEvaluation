@@ -18,7 +18,7 @@ const fetch = async function () {
 
 $("body").on("click",".ingredients", async function(){
   let recipe = $(this).closest(".recipe")
-  let title = recipe.find(".title").html()
+  let title = recipe.find(".title").text()
   ingredients = recipe_manager.getRecipeIngredients(title)
   renderer.renderIngredients(ingredients,recipe)
 })
