@@ -35,7 +35,6 @@ def get_recipes(ingredient,gluten_free,dairy_free, response: Response):
         recipes = list(filter(lambda recipe: (helper.filter_recipe(recipe,"dairy")), recipes))
     recipes = helper.filter_attributes(recipes)
     return recipes
-    a=5
 
 @app.get('/')
 def root():
